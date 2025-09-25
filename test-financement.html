@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Financement - Devis Dentaire CEMEDIS</title>
+    <link rel="stylesheet" href="devis-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header avec logo et informations patient -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="" 
+                         alt="Logo du centre" class="logo" id="centre-logo">
+                    <div class="header-text">
+                        <h1>Mon Devis Dentaire</h1>
+                        <p class="devis-number">Devis n° <span id="devis-id">10960427</span></p>
+                    </div>
+                </div>
+                <div class="patient-info">
+                    <div class="patient-details">
+                        <h2><i class="fas fa-user"></i> Samia F CHAOUCHE</h2>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Centre : Centre Santé Dentaire Créteil Pointe du Lac</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-user-md"></i>
+                                <span>Praticien : Doctor MONTERO GARCIA Monica</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation principale -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="#devis" class="nav-link" data-section="devis">
+                    <i class="fas fa-file-invoice"></i> Mon Devis
+                </a></li>
+                <li><a href="#comprendre" class="nav-link" data-section="comprendre">
+                    <i class="fas fa-info-circle"></i> Comprendre
+                </a></li>
+                <li><a href="#remboursements" class="nav-link" data-section="remboursements">
+                    <i class="fas fa-euro-sign"></i> Remboursements
+                </a></li>
+                <li><a href="#financement" class="nav-link active" data-section="financement">
+                    <i class="fas fa-credit-card"></i> Financement
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Section Devis -->
+            <section id="devis" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-tooth"></i> Plan de Traitement</h2>
+                    <p>Détail de votre traitement dentaire personnalisé</p>
+                </div>
+
+                <!-- Tableau des soins -->
+                <div class="treatment-table-container">
+                    <div class="table-wrapper">
+                        <table class="treatment-table" id="treatment-table">
+                            <thead>
+                                <tr>
+                                    <th><i class="fas fa-hashtag"></i> Dent</th>
+                                    <th><i class="fas fa-tools"></i> Traitement</th>
+                                    <th><i class="fas fa-euro-sign"></i> Honoraires</th>
+                                </tr>
+                            </thead>
+                            <tbody id="treatment-body">
+                                <tr>
+                                    <td>46</td>
+                                    <td>Couronne</td>
+                                    <td>440,00€</td>
+                                </tr>
+                                <tr>
+                                    <td>46</td>
+                                    <td>Couronne transitoire</td>
+                                    <td>60,00€</td>
+                                </tr>
+                                <tr>
+                                    <td>46</td>
+                                    <td>Inlay-core</td>
+                                    <td>175,00€</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Actions principales -->
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="download-btn">
+                        <i class="fas fa-download"></i>
+                        Télécharger mon devis
+                    </button>
+                    <button class="btn btn-secondary" id="sign-btn">
+                        <i class="fas fa-signature"></i>
+                        Signer mon devis
+                    </button>
+                </div>
+
+                <!-- Résumé financier -->
+                <div class="financial-summary">
+                    <div class="summary-card">
+                        <h3><i class="fas fa-calculator"></i> Résumé Financier</h3>
+                        <div class="summary-grid">
+                            <div class="summary-item total">
+                                <span class="label">Montant total</span>
+                                <span class="value">675 €</span>
+                            </div>
+                            <div class="summary-item security">
+                                <span class="label">Sécurité Sociale</span>
+                                <span class="value">132 €</span>
+                            </div>
+                            <div class="summary-item mutuelle">
+                                <span class="label">Mutuelle</span>
+                                <span class="value">Demande en cours</span>
+                            </div>
+                            <div class="summary-item remaining">
+                                <span class="label">À votre charge</span>
+                                <span class="value">543 €</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Comprendre -->
+            <section id="comprendre" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-lightbulb"></i> Comprendre Mon Devis</h2>
+                    <p>Informations détaillées sur votre traitement</p>
+                </div>
+
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-euro-sign"></i>
+                        </div>
+                        <h3>Mes Remboursements</h3>
+                        <p>Comprendre le système de remboursement de la Sécurité Sociale et des mutuelles</p>
+                        <button class="btn btn-outline" onclick="switchSection('remboursements')">
+                            En savoir plus
+                        </button>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Comparateur Mutuelles</h3>
+                        <p>Comparez les offres de mutuelles pour optimiser vos remboursements</p>
+                        <button class="btn btn-outline" onclick="openComparateurMutuelles()">
+                            Comparer
+                        </button>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>100% Santé</h3>
+                        <p>Découvrez les soins entièrement pris en charge par la Sécurité Sociale</p>
+                        <button class="btn btn-outline" onclick="open100Sante()">
+                            Découvrir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Types de soins -->
+                <div class="treatment-types">
+                    <h3><i class="fas fa-list"></i> Types de Soins</h3>
+                    <div class="treatment-grid">
+                        <div class="treatment-item" onclick="openTreatmentInfo('pcic')">
+                            <i class="fas fa-cog"></i>
+                            <span>Inlay Core</span>
+                        </div>
+                        <div class="treatment-item" onclick="openTreatmentInfo('pcc')">
+                            <i class="fas fa-crown"></i>
+                            <span>Couronnes</span>
+                        </div>
+                        <div class="treatment-item" onclick="openTreatmentInfo('pcb')">
+                            <i class="fas fa-link"></i>
+                            <span>Bridges</span>
+                        </div>
+                        <div class="treatment-item" onclick="openTreatmentInfo('pcon')">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span>Inlay Onlay</span>
+                        </div>
+                        <div class="treatment-item" onclick="openTreatmentInfo('pa')">
+                            <i class="fas fa-teeth"></i>
+                            <span>Appareils</span>
+                        </div>
+                        <div class="treatment-item" onclick="openTreatmentInfo('implant')">
+                            <i class="fas fa-anchor"></i>
+                            <span>Implants</span>
+                        </div>
+                        <div class="treatment-item" onclick="openTreatmentInfo('orthodontie')">
+                            <i class="fas fa-align-center"></i>
+                            <span>Orthodontie</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Remboursements -->
+            <section id="remboursements" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-euro-sign"></i> Mes Remboursements</h2>
+                    <p>Détail de vos remboursements Sécurité Sociale et mutuelle</p>
+                </div>
+
+                <div class="remboursement-cards">
+                    <div class="remboursement-card security">
+                        <div class="card-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Sécurité Sociale</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="amount">132 €</div>
+                            <p>Remboursement direct de la Sécurité Sociale à votre établissement. Ce montant correspond à la colonne 'Part RO' ou 'Part S.S' sur un devis.</p>
+                            <div class="calculation">
+                                <small>Calculé à 60% de la Base de Remboursement (BR)</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="remboursement-card mutuelle">
+                        <div class="card-header">
+                            <i class="fas fa-heart"></i>
+                            <h3>Mutuelle Complémentaire</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="amount">Demande en cours</div>
+                            <p>Montant remboursé par votre mutuelle complémentaire. Ce montant peut être réglé directement à notre établissement si votre mutuelle accepte la Prise En Charge Tiers Payant.</p>
+                            <div class="benefit">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Nos services s'occupent de toutes les démarches</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="remboursement-card remaining">
+                        <div class="card-header">
+                            <i class="fas fa-wallet"></i>
+                            <h3>À Votre Charge</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="amount">543 €</div>
+                            <p>Montant que vous devez régler à l'établissement. Un acompte d'au moins 50% du montant à payer doit être versé lors de la commande des prothèses.</p>
+                            <div class="payment-info">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Solutions de paiement en plusieurs fois disponibles</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Financement -->
+            <section id="financement" class="content-section active">
+                <div class="section-header">
+                    <h2><i class="fas fa-credit-card"></i> Mon Financement</h2>
+                    <p>Choisissez votre solution de paiement personnalisée</p>
+                </div>
+
+                <!-- Montant à payer -->
+                <div class="amount-section">
+                    <div class="amount-card">
+                        <h3><i class="fas fa-wallet"></i> Montant à payer</h3>
+                        <div class="amount-display">
+                            <span class="amount-value" id="total-amount">543 €</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sélection du montant -->
+                <div class="amount-selection">
+                    <h3><i class="fas fa-sliders-h"></i> Sélectionnez un montant à financer</h3>
+                    <div class="slider-container">
+                        <input type="range" id="payment-slider" min="10" max="543" step="10" value="543">
+                        <div class="slider-labels">
+                            <span>10 €</span>
+                            <span id="selected-amount">543 €</span>
+                            <span>543 €</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Options de financement -->
+                <div class="financing-options">
+                    <h3><i class="fas fa-cogs"></i> Choisir votre mode de financement</h3>
+                    <div class="financing-grid">
+                        <div class="financing-option" id="klarna-financing">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" 
+                                 alt="Klarna" class="financing-logo">
+                            <div class="financing-info">
+                                <h4>Klarna 3x 4x</h4>
+                                <p>Paiement en 3 ou 4 fois sans frais</p>
+                            </div>
+                        </div>
+
+                        <div class="financing-option" id="veasy-financing">
+                            <img src="https://static.wixstatic.com/media/b07e07_9ef9e2f54fdb457baad0651a5f831140~mv2.jpg" 
+                                 alt="Oney" class="financing-logo">
+                            <div class="financing-info">
+                                <h4>Oney 3x 4x</h4>
+                                <p>Paiement en 3 ou 4 fois sans frais</p>
+                            </div>
+                        </div>
+
+                        <div class="financing-option" id="cb-financing">
+                            <img src="https://static.wixstatic.com/media/b07e07_ac236c29215841a2a2df6e47c5526217~mv2.png" 
+                                 alt="Cartes Bancaires" class="financing-logo">
+                            <div class="financing-info">
+                                <h4>Cartes Bancaires</h4>
+                                <p>Paiement sécurisé par carte</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informations supplémentaires -->
+                <div class="financing-info-section">
+                    <div class="info-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Paiement 100% Sécurisé</h4>
+                        <p>Tous vos paiements sont protégés par un cryptage SSL et nos partenaires financiers certifiés.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Traitement Immédiat</h4>
+                        <p>Votre demande de financement est traitée instantanément pour une prise en charge rapide.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Comparateur Mutuelles -->
+            <section id="comparateur-mutuelles" class="content-section">
+                <div class="section-header">
+                    <img src="https://static.wixstatic.com/media/b07e07_8a0e841940b7440ca9498e85daede5d1~mv2.png" width="30" height="80" alt="Comparateur">
+                    <h2>Comparateur Mutuelles</h2>
+                    <p>Comparez les offres de mutuelles pour optimiser vos remboursements</p>
+                </div>
+
+                <div class="comparateur-container">
+                    <div class="comparateur-wrapper">
+                        <iframe 
+                            width="100%" 
+                            height="600" 
+                            src="https://lookerstudio.google.com/embed/reporting/2263eb5e-f0d0-4a26-89ad-65bdb565f60d/page/p_o07v92pk5c?zoom=75" 
+                            frameborder="0" 
+                            style="border:0; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal de signature -->
+    <div id="signature-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-signature"></i> Signature du Devis</h3>
+                <button class="modal-close" onclick="closeSignatureModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe id="signature-iframe" src="" width="100%" height="500px" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat d'assistance -->
+    <div class="chat-widget" id="chat-widget">
+        <div class="chat-toggle" onclick="toggleChat()">
+            <i class="fas fa-comments"></i>
+            <span>Assistant</span>
+        </div>
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <h4><i class="fas fa-robot"></i> Votre assistant devis</h4>
+                <button class="chat-close" onclick="toggleChat()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Bonjour Samia F CHAOUCHE !</p>
+                        <p>Comment puis-je vous aider avec votre financement ?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input" placeholder="Posez-moi vos questions...">
+                <button onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="devis-script.js"></script>
+    <script>
+        // Simuler les paramètres URL pour le test du logo
+        window.addEventListener('DOMContentLoaded', function() {
+            // Ajouter le paramètre logo à l'URL pour le test
+            if (!window.location.search.includes('logo=')) {
+                const logoUrl = 'https://static.wixstatic.com/media/b07e07_829fb71a56b44b6b80e3974bd04a24d2~mv2.png';
+                const separator = window.location.search ? '&' : '?';
+                window.history.replaceState({}, '', window.location.pathname + window.location.search + separator + 'logo=' + encodeURIComponent(logoUrl));
+            }
+            
+            // Forcer l'initialisation du logo après un court délai
+            setTimeout(function() {
+                const logoElement = document.getElementById('centre-logo');
+                if (logoElement) {
+                    logoElement.src = 'https://static.wixstatic.com/media/b07e07_829fb71a56b44b6b80e3974bd04a24d2~mv2.png';
+                    logoElement.alt = 'Logo du centre';
+                    console.log('Logo du centre chargé:', logoElement.src);
+                }
+            }, 100);
+        });
+    </script>
+    
+    <!-- Script de test avec les paramètres réels -->
+    <script>
+        // Simuler les paramètres URL pour le test
+        const testParams = {
+            'idDevis': '10960427',
+            'centre': 'Centre Santé Dentaire Créteil Pointe du Lac',
+            'praticien': 'Doctor MONTERO GARCIA Monica',
+            'date': '24/09/2025',
+            'patientnom': 'F CHAOUCHE',
+            'patientprenom': 'Samia',
+            'wtype': '[{"code_ccam":"HBLD073","date":"24/09/2025","tooth_number":"46","price":"440,00","libelle":"Couronne"},{"code_ccam":"HBLD724","date":"24/09/2025","tooth_number":"46","price":"60,00","libelle":"Couronne transitoire"},{"code_ccam":"HBLD745","date":"24/09/2025","tooth_number":"46","price":"175,00","libelle":"Inlay-core"}]',
+            'total': '675',
+            'ss': '132',
+            'mut': '',
+            'rac': '543',
+            'idCentre': '3515',
+            'idPat': '15019167',
+            'quotation_pdf': 'https://europe-west9-pecapi-app.cloudfunctions.net/storage/download/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlbmFtZSI6ImRldmlzXzEwOTYwNDI3XzM1MTUucGRmIiwiaWF0IjoxNzU4NzI0NjQ1fQ.r-ole1hRjhNysi4EFPArME-UVpIyYQUJBiCTJdEv5_o/',
+            'idPodio': '3170109246',
+            'br': '5831950025152703',
+            'tel': '0755017044',
+            'idPraticien': '23070843',
+            'mail': 'samiachaouche516@gmail.com'
+        };
+
+        // Override de la fonction getUrlParameter pour utiliser les paramètres de test
+        window.getUrlParameter = function(name) {
+            return testParams[name] || null;
+        };
+
+        // Initialiser l'interface avec les données de test
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🧪 Test complet de l\'interface avec les paramètres réels :');
+            console.log('Patient:', testParams.patientnom, testParams.patientprenom);
+            console.log('Centre:', testParams.centre);
+            console.log('Praticien:', testParams.praticien);
+            console.log('Montant à payer:', testParams.rac, '€');
+            console.log('ID Praticien:', testParams.idPraticien);
+            console.log('ID Centre:', testParams.idCentre);
+            console.log('ID Patient:', testParams.idPat);
+            
+            // Vérifier que tous les éléments sont bien affichés
+            setTimeout(() => {
+                console.log('✅ Vérification de toutes les sections :');
+                
+                // Test Section Devis
+                const devisSection = document.getElementById('devis');
+                const treatmentTable = document.getElementById('treatment-table');
+                const downloadBtn = document.getElementById('download-btn');
+                const signBtn = document.getElementById('sign-btn');
+                
+                console.log('📄 Section Devis:');
+                console.log('- Section présente:', devisSection ? 'Oui' : 'Non');
+                console.log('- Tableau de traitement:', treatmentTable ? 'Présent' : 'Non trouvé');
+                console.log('- Bouton télécharger:', downloadBtn ? 'Présent' : 'Non trouvé');
+                console.log('- Bouton signature:', signBtn ? 'Présent' : 'Non trouvé');
+                
+                // Test Section Comprendre
+                const comprendreSection = document.getElementById('comprendre');
+                const infoCards = document.querySelectorAll('#comprendre .info-card');
+                const treatmentTypes = document.querySelectorAll('#comprendre .treatment-item');
+                
+                console.log('💡 Section Comprendre:');
+                console.log('- Section présente:', comprendreSection ? 'Oui' : 'Non');
+                console.log('- Cartes d\'information:', infoCards.length, 'cartes');
+                console.log('- Types de traitement:', treatmentTypes.length, 'types');
+                
+                // Test Section Remboursements
+                const remboursementsSection = document.getElementById('remboursements');
+                const remboursementCards = document.querySelectorAll('#remboursements .remboursement-card');
+                
+                console.log('💰 Section Remboursements:');
+                console.log('- Section présente:', remboursementsSection ? 'Oui' : 'Non');
+                console.log('- Cartes de remboursement:', remboursementCards.length, 'cartes');
+                
+                // Test Section Financement
+                const financementSection = document.getElementById('financement');
+                const totalAmount = document.getElementById('total-amount');
+                const slider = document.getElementById('payment-slider');
+                const selectedAmount = document.getElementById('selected-amount');
+                const klarnaOption = document.getElementById('klarna-financing');
+                const veasyOption = document.getElementById('veasy-financing');
+                const cbOption = document.getElementById('cb-financing');
+                
+                console.log('💳 Section Financement:');
+                console.log('- Section présente:', financementSection ? 'Oui' : 'Non');
+                console.log('- Montant total:', totalAmount ? totalAmount.textContent : 'Non trouvé');
+                console.log('- Curseur:', slider ? 'Présent' : 'Non trouvé');
+                console.log('- Montant sélectionné:', selectedAmount ? selectedAmount.textContent : 'Non trouvé');
+                console.log('- Option Klarna:', klarnaOption ? 'Présente' : 'Non trouvée');
+                console.log('- Option Veasy:', veasyOption ? 'Présente' : 'Non trouvée');
+                console.log('- Option CB:', cbOption ? 'Présente' : 'Non trouvée');
+                
+                // Test Navigation
+                const navLinks = document.querySelectorAll('.nav-link');
+                console.log('🧭 Navigation:');
+                console.log('- Liens de navigation:', navLinks.length, 'liens');
+                
+                // Test Chat
+                const chatWidget = document.getElementById('chat-widget');
+                const chatWindow = document.getElementById('chat-window');
+                console.log('💬 Chat d\'assistance:');
+                console.log('- Widget chat:', chatWidget ? 'Présent' : 'Non trouvé');
+                console.log('- Fenêtre chat:', chatWindow ? 'Présente' : 'Non trouvée');
+                
+                // Test Modal
+                const signatureModal = document.getElementById('signature-modal');
+                console.log('📝 Modal de signature:');
+                console.log('- Modal présente:', signatureModal ? 'Oui' : 'Non');
+                
+                // Test du curseur de financement
+                if (slider && selectedAmount) {
+                    console.log('🎚️ Test du curseur de financement :');
+                    console.log('- Valeur min:', slider.min);
+                    console.log('- Valeur max:', slider.max);
+                    console.log('- Valeur actuelle:', slider.value);
+                    console.log('- Montant affiché:', selectedAmount.textContent);
+                }
+                
+                // Résumé du test
+                const totalSections = 4;
+                const sectionsFound = [devisSection, comprendreSection, remboursementsSection, financementSection].filter(Boolean).length;
+                
+                console.log('📊 Résumé du test :');
+                console.log(`- Sections trouvées: ${sectionsFound}/${totalSections}`);
+                console.log(`- Navigation: ${navLinks.length >= 4 ? 'Complète' : 'Incomplète'}`);
+                console.log(`- Financement: ${klarnaOption && veasyOption && cbOption ? 'Complet' : 'Incomplet'}`);
+                console.log(`- Chat: ${chatWidget ? 'Présent' : 'Manquant'}`);
+                console.log(`- Modal: ${signatureModal ? 'Présente' : 'Manquante'}`);
+                
+                if (sectionsFound === totalSections && navLinks.length >= 4) {
+                    console.log('🎉 Test complet terminé avec succès ! Toutes les sections sont présentes.');
+                } else {
+                    console.log('⚠️ Test terminé avec des éléments manquants.');
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
