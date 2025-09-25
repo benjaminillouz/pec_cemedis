@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Prise en Charge Dentaire</title>
+    <link rel="stylesheet" href="ma-pec-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <img src="" 
+                     alt="Logo du centre" class="logo" id="centre-logo">
+                <div class="header-text">
+                    <h1>Ma Prise en Charge Dentaire</h1>
+                    <p class="pec-number">PEC n° <span id="pec-id">-</span></p>
+                </div>
+            </div>
+            <div class="patient-info">
+                <div class="patient-details">
+                    <h2><i class="fas fa-user"></i> <span id="patient-name">-</span></h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="label">Centre :</span>
+                            <span id="centre-name">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Praticien :</span>
+                            <span id="praticien-name">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Date :</span>
+                            <span id="pec-date">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#pec" class="nav-link active" data-section="pec">
+                    <i class="fas fa-file-medical"></i> Ma PEC
+                </a></li>
+                <li><a href="#comprendre" class="nav-link" data-section="comprendre">
+                    <i class="fas fa-lightbulb"></i> Comprendre
+                </a></li>
+                <li><a href="#remboursements" class="nav-link" data-section="remboursements">
+                    <i class="fas fa-euro-sign"></i> Mes Remboursements
+                </a></li>
+                <li><a href="#financement" class="nav-link" data-section="financement">
+                    <i class="fas fa-credit-card"></i> Financement
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Section PEC -->
+            <section id="pec" class="content-section active">
+                <div class="section-header">
+                    <h2><i class="fas fa-file-medical"></i> Ma Prise en Charge</h2>
+                    <p>Informations générales de votre prise en charge</p>
+                </div>
+
+                <!-- Résumé financier -->
+                <div class="summary-section">
+                    <div class="summary-grid">
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fas fa-euro-sign"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>Montant Total</h3>
+                                <div class="amount" id="total-amount">- €</div>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>Sécurité Sociale</h3>
+                                <div class="amount" id="ss-amount">- €</div>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>Mutuelle</h3>
+                                <div class="amount" id="mut-amount">- €</div>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>À Votre Charge</h3>
+                                <div class="amount" id="rac-amount">- €</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informations patient -->
+                <div class="patient-section">
+                    <h3><i class="fas fa-user-md"></i> Informations Patient</h3>
+                    <div class="patient-grid">
+                        <div class="patient-card">
+                            <div class="patient-label">Nom</div>
+                            <div class="patient-value" id="patient-nom">-</div>
+                        </div>
+                        <div class="patient-card">
+                            <div class="patient-label">Prénom</div>
+                            <div class="patient-value" id="patient-prenom">-</div>
+                        </div>
+                        <div class="patient-card">
+                            <div class="patient-label">Téléphone</div>
+                            <div class="patient-value" id="patient-tel">-</div>
+                        </div>
+                        <div class="patient-card">
+                            <div class="patient-label">Email</div>
+                            <div class="patient-value" id="patient-email">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bouton de prise de rendez-vous -->
+                <div class="appointment-section">
+                    <div class="appointment-card">
+                        <div class="appointment-icon">
+                            <i class="fas fa-calendar-plus"></i>
+                        </div>
+                        <div class="appointment-content">
+                            <h3>Prendre un rendez-vous</h3>
+                            <p>Planifiez votre prochaine consultation en ligne</p>
+                            <button class="btn btn-primary" onclick="handleAppointment()">
+                                <i class="fas fa-calendar-check"></i> Prendre RDV
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Comprendre -->
+            <section id="comprendre" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-lightbulb"></i> Comprendre</h2>
+                    <p>Explications détaillées des actes dentaires</p>
+                </div>
+
+                <div class="treatment-navigation">
+                    <div class="nav-tabs">
+                        <button class="tab-btn active" data-treatment="implants">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Implants">
+                            <span>Implants</span>
+                        </button>
+                        <button class="tab-btn" data-treatment="orthodontie">
+                            <img src="https://static.wixstatic.com/media/b07e07_5883ed1fcfa741b9a81339c4aae05277~mv2.png" alt="Orthodontie">
+                            <span>Orthodontie</span>
+                        </button>
+                        <button class="tab-btn" data-treatment="appareils">
+                            <img src="https://static.wixstatic.com/media/b07e07_fff56fcce8d049479e86de69341d9234~mv2.png" alt="Appareils dentaires">
+                            <span>Appareils dentaires</span>
+                        </button>
+                        <button class="tab-btn" data-treatment="bridges">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Bridges">
+                            <span>Bridges</span>
+                        </button>
+                        <button class="tab-btn" data-treatment="couronnes">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Couronnes">
+                            <span>Couronnes</span>
+                        </button>
+                        <button class="tab-btn" data-treatment="inlay-core">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Inlay Core">
+                            <span>Inlay Core</span>
+                        </button>
+                        <button class="tab-btn" data-treatment="inlay-onlay">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Inlay Onlay">
+                            <span>Inlay Onlay</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="treatment-explanations">
+                    <!-- Implants -->
+                    <div id="implants" class="treatment-info active">
+                        <div class="treatment-header">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Implants">
+                            <h3>Implants Dentaires</h3>
+                        </div>
+                        
+                        <div class="treatment-content">
+                            <div class="treatment-intro">
+                                <p><strong>✔️ Implants dentaires :</strong> Un implant dentaire est une vis en titane qui remplace la racine d'une dent manquante. Il s'intègre dans l'os de la mâchoire et sert de support pour une couronne, un bridge ou une prothèse.</p>
+                            </div>
+
+                            <div class="treatment-image">
+                                <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Implants">
+                            </div>
+
+                            <div class="treatment-details">
+                                <div class="detail-section">
+                                    <h4>✔️ Qu'est-ce qu'un implant dentaire ?</h4>
+                                    <p>Un implant dentaire est une vis en titane biocompatible qui est insérée dans l'os de la mâchoire pour remplacer la racine d'une dent manquante. Une fois l'implant intégré à l'os (ostéointégration), il peut supporter une couronne, un bridge ou une prothèse dentaire.</p>
+                                </div>
+
+                                <div class="detail-section">
+                                    <h4>🕛 Étapes de réalisation :</h4>
+                                    <ol>
+                                        <li><strong>Consultation initiale :</strong> Le dentiste évalue l'état de votre mâchoire, votre santé bucco-dentaire et vos besoins</li>
+                                        <li><strong>Planification :</strong> Des examens (radiographie, scanner) sont réalisés pour évaluer la quantité et la qualité de l'os</li>
+                                        <li><strong>Pose de l'implant :</strong> Sous anesthésie locale, l'implant est inséré dans l'os de la mâchoire</li>
+                                        <li><strong>Période de cicatrisation :</strong> L'os fusionne avec l'implant (ostéointégration) sur une période de 3 à 6 mois</li>
+                                        <li><strong>Fixation de l'élément prothétique :</strong> Une fois l'implant stable, une couronne, un bridge ou une prothèse est fixé(e) sur l'implant</li>
+                                        <li><strong>Suivi régulier :</strong> Le dentiste contrôle l'état de l'implant et de la prothèse</li>
+                                    </ol>
+                                </div>
+
+                                <div class="reimbursement-info">
+                                    <div class="reimbursement-item not-covered">
+                                        <span class="icon">🔴</span>
+                                        <span>Acte non remboursé par la Sécurité Sociale</span>
+                                    </div>
+                                    <div class="reimbursement-item not-covered">
+                                        <span class="icon">🔴</span>
+                                        <span>Acte non pris en charge par les Mutuelles complémentaires sauf contrats spécifiques</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orthodontie -->
+                    <div id="orthodontie" class="treatment-info">
+                        <div class="treatment-header">
+                            <img src="https://static.wixstatic.com/media/b07e07_5883ed1fcfa741b9a81339c4aae05277~mv2.png" alt="Orthodontie">
+                            <h3>Orthodontie</h3>
+                        </div>
+                        
+                        <div class="treatment-content">
+                            <div class="treatment-intro">
+                                <p><strong>✔️ Orthodontie :</strong> L'orthodontie est une spécialité dentaire qui vise à aligner les dents et à corriger les mâchoires mal positionnées pour améliorer l'esthétique du sourire et la santé bucco-dentaire.</p>
+                            </div>
+
+                            <div class="treatment-image">
+                                <img src="https://static.wixstatic.com/media/b07e07_bbe6e0591be04bd08749944d25058f62~mv2.webp" alt="Orthodontie">
+                            </div>
+
+                            <div class="treatment-details">
+                                <div class="detail-section">
+                                    <h4>✔️ Qu'est-ce que l'orthodontie ?</h4>
+                                    <p>L'orthodontie est une discipline qui utilise des dispositifs spécifiques, comme les appareils fixes ou amovibles, pour corriger les malpositions des dents et des mâchoires. Ces traitements permettent d'améliorer non seulement l'apparence du sourire, mais aussi la fonction masticatoire, la phonation et la santé buccale.</p>
+                                </div>
+
+                                <div class="detail-section">
+                                    <h4>🕛 Les étapes d'un traitement orthodontique :</h4>
+                                    <ol>
+                                        <li><strong>Consultation initiale :</strong> Examen clinique, radiographies et empreintes ou scan numérique pour évaluer votre cas</li>
+                                        <li><strong>Plan de traitement :</strong> Le dentiste ou orthodontiste établit un plan personnalisé selon vos besoins</li>
+                                        <li><strong>Pose de l'appareil :</strong> Installation de l'appareil choisi (brackets, aligneurs, etc.)</li>
+                                        <li><strong>Suivi régulier :</strong> Ajustements mensuels ou à intervalles réguliers pour garantir une progression optimale</li>
+                                        <li><strong>Phase de contention :</strong> Une fois les dents alignées, un appareil de contention est utilisé pour maintenir les résultats</li>
+                                    </ol>
+                                </div>
+
+                                <div class="reimbursement-info">
+                                    <div class="reimbursement-section">
+                                        <h4>Enfants de moins de 16 ans</h4>
+                                        <div class="reimbursement-item covered">
+                                            <span class="icon">✅</span>
+                                            <span>Acte remboursé par la Sécurité Sociale</span>
+                                        </div>
+                                        <div class="reimbursement-item covered">
+                                            <span class="icon">✅</span>
+                                            <span>Acte pris en charge par les Mutuelles complémentaires</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="reimbursement-section">
+                                        <h4>Adultes</h4>
+                                        <div class="reimbursement-item not-covered">
+                                            <span class="icon">🔴</span>
+                                            <span>Acte non remboursé par la Sécurité Sociale</span>
+                                        </div>
+                                        <div class="reimbursement-item not-covered">
+                                            <span class="icon">🔴</span>
+                                            <span>Acte non pris en charge par les Mutuelles complémentaires sauf contrats spécifiques</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appareils dentaires -->
+                    <div id="appareils" class="treatment-info">
+                        <div class="treatment-header">
+                            <img src="https://static.wixstatic.com/media/b07e07_fff56fcce8d049479e86de69341d9234~mv2.png" alt="Appareils">
+                            <h3>Appareils dentaires</h3>
+                        </div>
+                        
+                        <div class="treatment-content">
+                            <div class="treatment-intro">
+                                <p><strong>✔️ Appareils dentaires :</strong> Les appareils dentaires sont des prothèses qui remplacent les dents manquantes et restaurent la fonction masticatoire et l'esthétique du sourire.</p>
+                            </div>
+
+                            <div class="treatment-image">
+                                <img src="https://static.wixstatic.com/media/b07e07_fff56fcce8d049479e86de69341d9234~mv2.png" alt="Appareils dentaires">
+                            </div>
+
+                            <div class="treatment-details">
+                                <div class="detail-section">
+                                    <h4>✔️ Types d'appareils dentaires :</h4>
+                                    <ul>
+                                        <li><strong>Prothèses partielles amovibles :</strong> Remplacent quelques dents manquantes</li>
+                                        <li><strong>Prothèses complètes :</strong> Remplacent toutes les dents d'une mâchoire</li>
+                                        <li><strong>Prothèses sur implants :</strong> Fixées sur des implants pour plus de stabilité</li>
+                                    </ul>
+                                </div>
+
+                                <div class="detail-section">
+                                    <h4>🕛 Matériaux utilisés :</h4>
+                                    <ul>
+                                        <li><strong>Résine acrylique :</strong> Matériau économique et facile à ajuster</li>
+                                        <li><strong>Métal (chrome-cobalt) :</strong> Plus résistant et durable</li>
+                                        <li><strong>Céramique :</strong> Esthétique et biocompatible</li>
+                                    </ul>
+                                </div>
+
+                                <div class="reimbursement-info">
+                                    <div class="reimbursement-item covered">
+                                        <span class="icon">✅</span>
+                                        <span>Acte remboursé par la Sécurité Sociale (70% du tarif conventionnel)</span>
+                                    </div>
+                                    <div class="reimbursement-item covered">
+                                        <span class="icon">✅</span>
+                                        <span>Acte pris en charge par les Mutuelles complémentaires</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bridges -->
+                    <div id="bridges" class="treatment-info">
+                        <div class="treatment-header">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Bridges">
+                            <h3>Bridges</h3>
+                        </div>
+                        
+                        <div class="treatment-content">
+                            <div class="treatment-intro">
+                                <p><strong>✔️ Bridges :</strong> Un bridge est une prothèse fixe qui remplace une ou plusieurs dents manquantes en s'appuyant sur les dents adjacentes.</p>
+                            </div>
+
+                            <div class="treatment-image">
+                                <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Bridges">
+                            </div>
+
+                            <div class="treatment-details">
+                                <div class="detail-section">
+                                    <h4>✔️ Types de bridges :</h4>
+                                    <ul>
+                                        <li><strong>Bridge conventionnel :</strong> S'appuie sur les dents adjacentes</li>
+                                        <li><strong>Bridge collé :</strong> Fixé par collage sur les dents adjacentes</li>
+                                        <li><strong>Bridge sur implants :</strong> Supporté par des implants dentaires</li>
+                                    </ul>
+                                </div>
+
+                                <div class="detail-section">
+                                    <h4>🕛 Avantages des bridges :</h4>
+                                    <ul>
+                                        <li>Solution fixe et durable</li>
+                                        <li>Esthétique naturelle</li>
+                                        <li>Fonction masticatoire restaurée</li>
+                                        <li>Prévention de la migration des dents</li>
+                                    </ul>
+                                </div>
+
+                                <div class="reimbursement-info">
+                                    <div class="reimbursement-item covered">
+                                        <span class="icon">✅</span>
+                                        <span>Acte remboursé par la Sécurité Sociale (70% du tarif conventionnel)</span>
+                                    </div>
+                                    <div class="reimbursement-item covered">
+                                        <span class="icon">✅</span>
+                                        <span>Acte pris en charge par les Mutuelles complémentaires</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Couronnes -->
+                    <div id="couronnes" class="treatment-info">
+                        <div class="treatment-header">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Couronnes">
+                            <h3>Couronnes dentaires</h3>
+                        </div>
+                        
+                        <div class="treatment-content">
+                            <div class="treatment-intro">
+                                <p><strong>✔️ Couronnes dentaires :</strong> Une couronne dentaire recouvre entièrement une dent endommagée pour la protéger et restaurer sa forme et sa fonction.</p>
+                            </div>
+
+                            <div class="treatment-image">
+                                <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Couronnes">
+                            </div>
+
+                            <div class="treatment-details">
+                                <div class="detail-section">
+                                    <h4>✔️ Types de couronnes :</h4>
+                                    <ul>
+                                        <li><strong>Couronne céramique :</strong> Esthétique et biocompatible</li>
+                                        <li><strong>Couronne métallique :</strong> Résistante et durable</li>
+                                        <li><strong>Couronne céramo-métallique :</strong> Combinaison de résistance et d'esthétique</li>
+                                    </ul>
+                                </div>
+
+                                <div class="detail-section">
+                                    <h4>🕛 Indications :</h4>
+                                    <ul>
+                                        <li>Dent très cariée</li>
+                                        <li>Dent dévitalisée</li>
+                                        <li>Dent fracturée</li>
+                                        <li>Dent déformée</li>
+                                    </ul>
+                                </div>
+
+                                <div class="reimbursement-info">
+                                    <div class="reimbursement-item covered">
+                                        <span class="icon">✅</span>
+                                        <span>Acte remboursé par la Sécurité Sociale (70% du tarif conventionnel)</span>
+                                    </div>
+                                    <div class="reimbursement-item covered">
+                                        <span class="icon">✅</span>
+                                        <span>Acte pris en charge par les Mutuelles complémentaires</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inlay Core -->
+                    <div id="inlay-core" class="treatment-info">
+                        <div class="treatment-header">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Inlay Core">
+                            <h3>Inlay Core</h3>
+                        </div>
+                        
+                        <div class="treatment-content">
+                            <div class="treatment-intro">
+                                <p><strong>✔️ Inlay Core :</strong> Un inlay-core est une reconstitution qui remplace la partie coronaire d'une dent dévitalisée et sert de support pour une couronne.</p>
+                            </div>
+
+                            <div class="treatment-image">
+                                <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Inlay Core">
+                            </div>
+
+                            <div class="treatment-details">
+                                <div class="detail-section">
+                                    <h4>✔️ Matériaux utilisés :</h4>
+                                    <ul>
+                                        <li><strong>Métal (or, chrome-cobalt) :</strong> Résistance mécanique élevée</li>
+                                        <li><strong>Céramique :</strong> Esthétique et biocompatible</li>
+                                        <li><strong>Composites :</strong> Matériau moderne et esthétique</li>
+                                    </ul>
+                                </div>
+
+                                <div class="detail-section">
+                                    <h4>🕛 Avantages :</h4>
+                                    <ul>
+                                        <li>Résistance mécanique élevée</li>
+                                        <li>Préserve la dent naturelle</li>
+                                        <li>Solution durable</li>
+                                        <li>Support solide pour la couronne</li>
+                                    </ul>
+                                </div>
+
+                                <div class="reimbursement-info">
+                                    <div class="reimbursement-item covered">
+                                        <span class="icon">✅</span>
+                                        <span>Acte remboursé par la Sécurité Sociale (70% du tarif conventionnel)</span>
+                                    </div>
+                                    <div class="reimbursement-item covered">
+                                        <span class="icon">✅</span>
+                                        <span>Acte pris en charge par les Mutuelles complémentaires</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inlay Onlay -->
+                    <div id="inlay-onlay" class="treatment-info">
+                        <div class="treatment-header">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Inlay Onlay">
+                            <h3>Inlay Onlay</h3>
+                        </div>
+                        
+                        <div class="treatment-content">
+                            <div class="treatment-intro">
+                                <p><strong>✔️ Inlay Onlay :</strong> Un inlay-onlay est une restauration indirecte qui reconstitue une partie de la dent avec un matériau de haute qualité.</p>
+                            </div>
+
+                            <div class="treatment-image">
+                                <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Inlay Onlay">
+                            </div>
+
+                            <div class="treatment-details">
+                                <div class="detail-section">
+                                    <h4>✔️ Types :</h4>
+                                    <ul>
+                                        <li><strong>Inlay :</strong> Restauration interne de la dent</li>
+                                        <li><strong>Onlay :</strong> Restauration externe de la dent</li>
+                                        <li><strong>Overlay :</strong> Restauration complète de la dent</li>
+                                    </ul>
+                                </div>
+
+                                <div class="detail-section">
+                                    <h4>🕛 Matériaux :</h4>
+                                    <ul>
+                                        <li><strong>Céramique :</strong> Esthétique et durable</li>
+                                        <li><strong>Composites :</strong> Matériau moderne</li>
+                                        <li><strong>Or :</strong> Résistance et biocompatibilité</li>
+                                    </ul>
+                                </div>
+
+                                <div class="reimbursement-info">
+                                    <div class="reimbursement-item covered">
+                                        <span class="icon">✅</span>
+                                        <span>Acte remboursé par la Sécurité Sociale (70% du tarif conventionnel)</span>
+                                    </div>
+                                    <div class="reimbursement-item covered">
+                                        <span class="icon">✅</span>
+                                        <span>Acte pris en charge par les Mutuelles complémentaires</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Remboursements -->
+            <section id="remboursements" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-euro-sign"></i> Mes Remboursements</h2>
+                    <p>Détail de vos remboursements</p>
+                </div>
+
+                <div class="reimbursement-section">
+                    <div class="reimbursement-grid">
+                        <div class="reimbursement-card">
+                            <div class="reimbursement-header">
+                                <i class="fas fa-shield-alt"></i>
+                                <h3>Sécurité Sociale</h3>
+                            </div>
+                            <div class="reimbursement-content">
+                                <div class="reimbursement-amount" id="ss-amount-remboursements">- €</div>
+                                <p>Remboursement de base</p>
+                            </div>
+                        </div>
+                        <div class="reimbursement-card">
+                            <div class="reimbursement-header">
+                                <i class="fas fa-heart"></i>
+                                <h3>Mutuelle</h3>
+                            </div>
+                            <div class="reimbursement-content">
+                                <div class="reimbursement-amount" id="mut-amount-remboursements">- €</div>
+                                <p>Complément mutuelle</p>
+                            </div>
+                        </div>
+                        <div class="reimbursement-card">
+                            <div class="reimbursement-header">
+                                <i class="fas fa-wallet"></i>
+                                <h3>À Votre Charge</h3>
+                            </div>
+                            <div class="reimbursement-content">
+                                <div class="reimbursement-amount" id="rac-amount-remboursements">- €</div>
+                                <p>Reste à charge</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Financement -->
+            <section id="financement" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-credit-card"></i> Options de Financement</h2>
+                    <p>Choisissez votre mode de paiement</p>
+                </div>
+
+                <div class="financing-section">
+                    <div class="amount-section">
+                        <div class="amount-card">
+                            <h3>Montant à payer</h3>
+                            <div class="amount-display" id="total-amount-financement">- €</div>
+                        </div>
+                    </div>
+
+                    <div class="amount-selection">
+                        <h3>Sélectionnez un montant à financer</h3>
+                        <div class="slider-container">
+                            <input type="range" id="amount-slider" class="slider" min="0" max="1000" value="500" step="50">
+                            <div class="slider-labels">
+                                <span>0€</span>
+                                <span id="slider-value">500€</span>
+                                <span>1000€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="financing-options">
+                        <h3>Choisir votre mode de financement</h3>
+                        <div class="financing-grid">
+                            <div class="financing-option" id="klarna-financing">
+                                <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" 
+                                     alt="Klarna" class="financing-logo">
+                                <div class="financing-info">
+                                    <h4>Klarna 3x 4x</h4>
+                                    <p>Paiement en 3 ou 4 fois sans frais</p>
+                                </div>
+                            </div>
+
+                            <div class="financing-option" id="veasy-financing">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Oney_logo.svg/200px-Oney_logo.svg.png" 
+                                     alt="Oney" class="financing-logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiByeD0iNCIgZmlsbD0iIzAwNEI2MyIvPgo8dGV4dCB4PSI1MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5PTkVZPC90ZXh0Pgo8L3N2Zz4K'">
+                                <div class="financing-info">
+                                    <h4>Oney 3x 4x</h4>
+                                    <p>Paiement en 3 ou 4 fois sans frais</p>
+                                </div>
+                            </div>
+
+                            <div class="financing-option" id="cb-financing">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" 
+                                     alt="Cartes Bancaires" class="financing-logo">
+                                <div class="financing-info">
+                                    <h4>Cartes Bancaires</h4>
+                                    <p>Paiement sécurisé par carte bancaire</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="financing-info-section">
+                        <div class="info-card">
+                            <h4><i class="fas fa-info-circle"></i> Informations importantes</h4>
+                            <p>Les options de financement sont disponibles sous réserve d'acceptation par l'organisme de crédit.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-shield-alt"></i> Sécurité</h4>
+                            <p>Tous les paiements sont sécurisés et protégés par les normes bancaires.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="ma-pec-script.js"></script>
+</body>
+</html>
