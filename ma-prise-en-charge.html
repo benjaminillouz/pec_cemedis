@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Prise en Charge Dentaire</title>
+    <link rel="stylesheet" href="ma-pec-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <img src="" 
+                     alt="Logo du centre" class="logo" id="centre-logo">
+                <div class="header-text">
+                    <h1>Ma Prise en Charge Dentaire</h1>
+                    <p class="pec-number">PEC n° <span id="pec-id">-</span></p>
+                </div>
+            </div>
+            <div class="patient-info">
+                <div class="patient-details">
+                    <h2><i class="fas fa-user"></i> <span id="patient-name">-</span></h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="label">Centre :</span>
+                            <span id="centre-name">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Praticien :</span>
+                            <span id="praticien-name">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Date :</span>
+                            <span id="pec-date">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#pec" class="nav-link active" data-section="pec">
+                    <i class="fas fa-file-medical"></i> Ma PEC
+                </a></li>
+                <li><a href="#comprendre" class="nav-link" data-section="comprendre">
+                    <i class="fas fa-lightbulb"></i> Comprendre
+                </a></li>
+                <li><a href="#remboursements" class="nav-link" data-section="remboursements">
+                    <i class="fas fa-euro-sign"></i> Mes Remboursements
+                </a></li>
+                <li><a href="#financement" class="nav-link" data-section="financement">
+                    <i class="fas fa-credit-card"></i> Financement
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Section PEC -->
+            <section id="pec" class="content-section active">
+                <div class="section-header">
+                    <h2><i class="fas fa-file-medical"></i> Ma Prise en Charge</h2>
+                    <p>Informations générales de votre prise en charge</p>
+                </div>
+
+                <!-- Résumé financier -->
+                <div class="summary-section">
+                    <div class="summary-grid">
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fas fa-euro-sign"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>Montant Total</h3>
+                                <div class="amount" id="total-amount">- €</div>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>Sécurité Sociale</h3>
+                                <div class="amount" id="ss-amount">- €</div>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>Mutuelle</h3>
+                                <div class="amount" id="mut-amount">- €</div>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3>À Votre Charge</h3>
+                                <div class="amount" id="rac-amount">- €</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informations patient -->
+                <div class="patient-section">
+                    <h3><i class="fas fa-user-md"></i> Informations Patient</h3>
+                    <div class="patient-grid">
+                        <div class="patient-card">
+                            <div class="patient-label">Nom</div>
+                            <div class="patient-value" id="patient-nom">-</div>
+                        </div>
+                        <div class="patient-card">
+                            <div class="patient-label">Prénom</div>
+                            <div class="patient-value" id="patient-prenom">-</div>
+                        </div>
+                        <div class="patient-card">
+                            <div class="patient-label">Téléphone</div>
+                            <div class="patient-value" id="patient-tel">-</div>
+                        </div>
+                        <div class="patient-card">
+                            <div class="patient-label">Email</div>
+                            <div class="patient-value" id="patient-email">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bouton de prise de rendez-vous -->
+                <div class="appointment-section">
+                    <div class="appointment-card">
+                        <div class="appointment-icon">
+                            <i class="fas fa-calendar-plus"></i>
+                        </div>
+                        <div class="appointment-content">
+                            <h3>Prendre un rendez-vous</h3>
+                            <p>Planifiez votre prochaine consultation en ligne</p>
+                            <button class="btn btn-primary" onclick="handleAppointment()">
+                                <i class="fas fa-calendar-check"></i> Prendre RDV
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Comprendre -->
+            <section id="comprendre" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-lightbulb"></i> Comprendre</h2>
+                    <p>Explications détaillées des actes dentaires</p>
+                </div>
+                <div class="treatment-navigation">
+                    <div class="nav-tabs">
+                        <button class="tab-btn active" data-treatment="implants">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Implants">
+                            <span>Implants</span>
+                        </button>
+                        <button class="tab-btn" data-treatment="orthodontie">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Orthodontie">
+                            <span>Orthodontie</span>
+                        </button>
+                        <button class="tab-btn" data-treatment="appareils">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Appareils dentaires">
+                            <span>Appareils dentaires</span>
+                        </button>
+                        <button class="tab-btn" data-treatment="bridges">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Bridges">
+                            <span>Bridges</span>
+                        </button>
+                        <button class="tab-btn" data-treatment="couronnes">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Couronnes">
+                            <span>Couronnes</span>
+                        </button>
+                        <button class="tab-btn" data-treatment="inlay-core">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Inlay Core">
+                            <span>Inlay Core</span>
+                        </button>
+                        <button class="tab-btn" data-treatment="inlay-onlay">
+                            <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" alt="Inlay Onlay">
+                            <span>Inlay Onlay</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="treatment-explanations">
+                    <!-- Contenu sera ajouté dynamiquement -->
+                </div>
+            </section>
+
+            <!-- Section Remboursements -->
+            <section id="remboursements" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-euro-sign"></i> Mes Remboursements</h2>
+                    <p>Détail de vos remboursements</p>
+                </div>
+
+                <div class="reimbursement-section">
+                    <div class="reimbursement-grid">
+                        <div class="reimbursement-card">
+                            <div class="reimbursement-header">
+                                <i class="fas fa-shield-alt"></i>
+                                <h3>Sécurité Sociale</h3>
+                            </div>
+                            <div class="reimbursement-content">
+                                <div class="reimbursement-amount" id="ss-amount-remboursements">- €</div>
+                                <p>Remboursement de base</p>
+                            </div>
+                        </div>
+                        <div class="reimbursement-card">
+                            <div class="reimbursement-header">
+                                <i class="fas fa-heart"></i>
+                                <h3>Mutuelle</h3>
+                            </div>
+                            <div class="reimbursement-content">
+                                <div class="reimbursement-amount" id="mut-amount-remboursements">- €</div>
+                                <p>Complément mutuelle</p>
+                            </div>
+                        </div>
+                        <div class="reimbursement-card">
+                            <div class="reimbursement-header">
+                                <i class="fas fa-wallet"></i>
+                                <h3>À Votre Charge</h3>
+                            </div>
+                            <div class="reimbursement-content">
+                                <div class="reimbursement-amount" id="rac-amount-remboursements">- €</div>
+                                <p>Reste à charge</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Financement -->
+            <section id="financement" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-credit-card"></i> Options de Financement</h2>
+                    <p>Choisissez votre mode de paiement</p>
+                </div>
+
+                <div class="financing-section">
+                    <div class="amount-section">
+                        <div class="amount-card">
+                            <h3>Montant à payer</h3>
+                            <div class="amount-display" id="total-amount-financement">- €</div>
+                        </div>
+                    </div>
+
+                    <div class="amount-selection">
+                        <h3>Sélectionnez un montant à financer</h3>
+                        <div class="slider-container">
+                            <input type="range" id="amount-slider" class="slider" min="0" max="1000" value="500" step="50">
+                            <div class="slider-labels">
+                                <span>0€</span>
+                                <span id="slider-value">500€</span>
+                                <span>1000€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="financing-options">
+                        <h3>Choisir votre mode de financement</h3>
+                        <div class="financing-grid">
+                            <div class="financing-option" id="klarna-financing">
+                                <img src="https://static.wixstatic.com/media/b07e07_0603c1b3abd44130b7cea01b7f41b57e~mv2.png" 
+                                     alt="Klarna" class="financing-logo">
+                                <div class="financing-info">
+                                    <h4>Klarna 3x 4x</h4>
+                                    <p>Paiement en 3 ou 4 fois sans frais</p>
+                                </div>
+                            </div>
+
+                            <div class="financing-option" id="veasy-financing">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Oney_logo.svg/200px-Oney_logo.svg.png" 
+                                     alt="Oney" class="financing-logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjQwIiByeD0iNCIgZmlsbD0iIzAwNEI2MyIvPgo8dGV4dCB4PSI1MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5PTkVZPC90ZXh0Pgo8L3N2Zz4K'">
+                                <div class="financing-info">
+                                    <h4>Oney 3x 4x</h4>
+                                    <p>Paiement en 3 ou 4 fois sans frais</p>
+                                </div>
+                            </div>
+
+                            <div class="financing-option" id="cb-financing">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" 
+                                     alt="Cartes Bancaires" class="financing-logo">
+                                <div class="financing-info">
+                                    <h4>Cartes Bancaires</h4>
+                                    <p>Paiement sécurisé par carte bancaire</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="financing-info-section">
+                        <div class="info-card">
+                            <h4><i class="fas fa-info-circle"></i> Informations importantes</h4>
+                            <p>Les options de financement sont disponibles sous réserve d'acceptation par l'organisme de crédit.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-shield-alt"></i> Sécurité</h4>
+                            <p>Tous les paiements sont sécurisés et protégés par les normes bancaires.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="ma-pec-script.js"></script>
+</body>
+</html>
